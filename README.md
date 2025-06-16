@@ -1,211 +1,183 @@
-# 🏡 Glen Assignment - Property Management System
+# Glen Assignment - Property Management System
 
-A full-stack property management system built using **React**, **Node.js**, and **MongoDB**, enabling users to list, search, and book properties with secure authentication and integrated payment processing.
+A full-stack property management system built with React, Node.js, and MongoDB.
 
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-
-glen-property-management/
 ├── frontend/          # React frontend application
-└── backend/           # Node.js backend server
-
+│   ├── src/          # Source files
+│   ├── public/       # Static files
+│   └── package.json  # Frontend dependencies
+│
+└── backend/          # Node.js backend server
+    ├── src/         # Source files
+    ├── config/      # Configuration files
+    └── package.json # Backend dependencies
 ```
 
----
+## Prerequisites
 
-## ✅ Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (local or Atlas)
+- npm or yarn package manager
 
-Ensure you have the following installed:
+## Environment Variables
 
-- **Node.js** (v14 or higher)
-- **MongoDB** (local or Atlas)
-- **npm** or **yarn** package manager
-
----
-
-## 🔐 Environment Variables
-
-### 🔧 Backend `.env`
-
-Create a `.env` file in the `backend/` directory:
-
+### Backend (.env)
+Create a `.env` file in the `backend` directory:
 ```
-
 PORT=5000
-MONGODB\_URI=mongodb://localhost:27017/glen
-JWT\_SECRET=your\_jwt\_secret\_key
-
+MONGODB_URI=mongodb://localhost:27017/glen
+JWT_SECRET=your_jwt_secret_key
 ```
 
-### 🌐 Frontend `.env`
-
-Create a `.env` file in the `frontend/` directory:
-
+### Frontend (.env)
+Create a `.env` file in the `frontend` directory:
+```
+VITE_API_URL=http://localhost:5000/api
 ```
 
-VITE\_API\_URL=[http://localhost:5000/api](http://localhost:5000/api)
+## Installation & Setup
 
-````
-
----
-
-## 🚀 Installation & Setup
-
-### 🔙 Backend Setup
-
+### Backend Setup
+1. Navigate to the backend directory:
 ```bash
 cd backend
-npm install
-npm run dev
-````
+```
 
-➡️ Runs at: [http://localhost:5000](http://localhost:5000)
-
----
-
-### 🔜 Frontend Setup
-
+2. Install dependencies:
 ```bash
-cd frontend
 npm install
+```
+
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-➡️ Runs at: [http://localhost:5173](http://localhost:5173)
+The backend server will run on http://localhost:5000
 
----
-
-## ✨ Features
-
-* 🔐 User Authentication (Register/Login)
-* 🏘️ Property Listings (CRUD)
-* 🔎 Property Search with Filters
-* 📅 Booking Management
-* 💳 Payment Integration
-* 👤 User Profiles
-* 🛠️ Admin Dashboard
-
----
-
-## 📡 API Endpoints
-
-### 🔐 Authentication
-
-* `POST /api/auth/register` – Register a new user
-* `POST /api/auth/login` – Login user
-* `GET /api/auth/profile` – Get user profile
-
-### 🏠 Listings
-
-* `GET /api/listings` – Get all listings
-* `POST /api/listings` – Create new listing
-* `GET /api/listings/:id` – Get listing by ID
-* `PUT /api/listings/:id` – Update listing
-* `DELETE /api/listings/:id` – Delete listing
-
-### 📆 Bookings
-
-* `GET /api/bookings` – Get user bookings
-* `POST /api/bookings` – Create new booking
-* `PUT /api/bookings/:id` – Update booking status
-
-### 🔍 Search
-
-* `GET /api/search` – Search listings with filters
-
-### 💰 Payments
-
-* `POST /api/payments` – Process payment
-* `GET /api/payments/:id` – Get payment status
-
----
-
-## 🛠️ Technologies Used
-
-### 🎨 Frontend
-
-* React
-* TypeScript
-* Tailwind CSS
-* Axios
-* React Router
-* React Query
-
-### 🔧 Backend
-
-* Node.js
-* Express
-* MongoDB & Mongoose
-* JWT Authentication
-* CORS
-
----
-
-## 🧪 Development & Testing
-
-### 🔎 Code Style
-
-* **ESLint** for linting
-* **Prettier** for code formatting
-
-### ✅ Run Tests
-
+### Frontend Setup
+1. Navigate to the frontend directory:
 ```bash
-# Backend Tests
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+The frontend application will run on http://localhost:5173
+
+## Features
+
+- User Authentication (Register/Login)
+- Property Listings
+- Property Search
+- Booking Management
+- Payment Integration
+- User Profiles
+- Admin Dashboard
+
+## API Endpoints
+
+### Authentication
+- POST /api/auth/register - Register a new user
+- POST /api/auth/login - Login user
+- GET /api/auth/profile - Get user profile
+
+### Listings
+- GET /api/listings - Get all listings
+- POST /api/listings - Create new listing
+- GET /api/listings/:id - Get listing by ID
+- PUT /api/listings/:id - Update listing
+- DELETE /api/listings/:id - Delete listing
+
+### Bookings
+- GET /api/bookings - Get user bookings
+- POST /api/bookings - Create new booking
+- PUT /api/bookings/:id - Update booking status
+
+### Search
+- GET /api/search - Search listings with filters
+
+### Payments
+- POST /api/payments - Process payment
+- GET /api/payments/:id - Get payment status
+
+## Technologies Used
+
+### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- Axios
+- React Router
+- React Query
+
+### Backend
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- JWT Authentication
+- CORS
+
+## Development
+
+### Code Style
+- ESLint for code linting
+- Prettier for code formatting
+
+### Testing
+```bash
+# Backend tests
 cd backend
 npm test
 
-# Frontend Tests
+# Frontend tests
 cd frontend
 npm test
 ```
 
----
+## Deployment
 
-## ☁️ Deployment
-
-### 🌐 Frontend (Netlify)
-
+### Frontend (Netlify)
+1. Build the frontend:
 ```bash
 cd frontend
 npm run build
 ```
 
-* Deploy using [Netlify CLI](https://docs.netlify.com/cli/get-started/) or connect your GitHub repo.
+2. Deploy to Netlify using the Netlify CLI or connect your GitHub repository.
 
-### ⚙️ Backend (Render)
-
-1. Create a **Web Service** on [Render](https://render.com)
-2. Connect your GitHub repo
+### Backend (Render)
+1. Create a new Web Service on Render
+2. Connect your GitHub repository
 3. Set environment variables
-4. Click **Deploy**
+4. Deploy
 
----
+## Contributing
 
-## 🤝 Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-1. **Fork** the repository
-2. **Create** a feature branch:
-   `git checkout -b feature/AmazingFeature`
-3. **Commit** your changes:
-   `git commit -m 'Add some AmazingFeature'`
-4. **Push** the branch:
-   `git push origin feature/AmazingFeature`
-5. **Open** a Pull Request
+## License
 
----
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 📄 License
+## Support
 
-This project is licensed under the [MIT License](./LICENSE).
-
----
-
-## 📬 Support
-
-For support, email [satyamjha1616@gmail.com](mailto:satyamjha1616@gmail.com) or create an issue in the repository.
+For support, email support@glen.com or create an issue in the repository.
 
 ```
